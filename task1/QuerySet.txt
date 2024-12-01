@@ -1,0 +1,10 @@
+from task1.models import Buyer, Game
+name1 = Buyer.objects.get(name="Name1")
+name2 = Buyer.objects.get(name="Name2")
+name3 = Buyer.objects.get(name="Name3")
+game = Game.objects.get(id=1)
+game.buyer.set((name1, name2))
+game = Game.objects.get(id=2)
+game.buyer.set((name2, name3))
+game = Game.objects.get(id=3)
+game.buyer.set((name1, name2))

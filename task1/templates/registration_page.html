@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if error %}
+    <p style="color: red">{{ error }}</p>
+{% endif %}
+<form method="post">
+  {% csrf_token %}
+  <label for="username">Введите логин:</label>
+  <input type="text" id="username" name="username" maxlength="30">
+  <label for="balance">Введите свой баланс:</label>
+  <input type="number" id="balance" name="balance" maxlength="8">
+  <label for="age">Введите свой возраст:</label>
+  <input type="number" id="age" name="age" maxlength="3">
+  <input type="submit" value="Отправить">
+</form>
+{% if good %}
+    <p style="color: green; text-align: center; font-size: 24px;">{{ good }}</p>
+{% endif %}
+</body>
+</html>

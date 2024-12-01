@@ -1,0 +1,20 @@
+{% extends "menu.html" %}
+{% block pagename %}
+    <h1> {{ header }}</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+        {% for t,d,c in games %}
+            <table>
+                    <td width="100" height="10">| {{ t }}</td>
+                    <td width="200" height="10">| {{ d }}</td>
+                    <td width="150" height="10">| Стоимость: {{ c }}</td>
+                    <td><button>Купить</button></td>
+                </tr>
+            </table>
+        {% endfor %}
+{% endblock %}
